@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="UTF-8">
+ 
+  <title>Psychic Game</title>
+ 
+  <link rel="stylesheet" href="https://bootswatch.com/spacelab/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+  <!-- Game Title and Simple Directions -->
+  
+  <div class="container-fluid"> <!-- main container -->
+    <div class="col-md-3">
+    </div>
+      <div class="col-md-6 text-center">
+        <header>
+        <h2>The Psychic Game</h2>
+        </header>
+        <div class="instructions">
+          <h4>Try to guess the letter between A-Z that has been selected randomly.</h4>
+        </div>
+  
+  <!-- Game Score Tracker -->
+
+        <div id="game">
+          <ul class="list-group">
+            <li class="list-group-item"><p id="wins">Wins: </p></li>
+            <li class="list-group-item"><p id="losses">Losses: </p></li>
+            <li class="list-group-item"><p id="guessLeft">Remaining Guesses: </p></li>
+            <li class="list-group-item"><p id="remainingGuess"> Guesses so far: </p></li>
+          </ul>  
+        </div>
+      </div>
+  </div> <!-- end main container -->
+
+  <!-- Footer -->
+
+<div class="clear"></div>
+
+<div class="footer"> <p>&#169;Copyright 2017 Frank Chu</p> </div>
+
+
+   <script type="text/javascript" src="assets/javascript/game.js"></script>
+
+</body>
+
+</html>
