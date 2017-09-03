@@ -14,17 +14,18 @@ var letterToGuess = null;
 //Selects a letter at random
 var alphabet = alphabet[Math.floor(Math.random() * alphabet.length)];
 
+//Sets the Random Letter selected at random
+var updateRandomLetter = function() {
+  this.letterToGuess = this.alphabet[Math.floor(Math.random() * this.alphabet.length)];
+};
+
 //Sets User available guesses
 var updateGuessesLeft = function() {
   document.querySelector('#guessLeft').innerHTML = "Guesses left: " + guessesLeft;
 };
 
-var updateLetterToGuess = function() {
-  this.letterToGuess = this.alphabet[Math.floor(Math.random() * this.alphabet.length)];
-};
-
 // Displays User Guesses for Game Instance
-var updateGuessesSoFar = function() {
+var updateWrongGuesses = function() {
   document.querySelector('#remainingGuess').innerHTML = "Your Guesses so far: " + guessedLetters.join(', ');
 };
 
@@ -34,13 +35,11 @@ var reset = function() {
   guessesLeft = 9;
   guessedLetters = [];
 
-  updateLetterToGuess();
+  updateRandomLetter();
   updateGuessesLeft();
-  updateGuessesSoFar();
+  updateWrongGuesses();
 }
 
-updateLetterToGuess();
-updateGuessesLeft();
 
 
 //Function to register user guess
@@ -50,7 +49,7 @@ document.onkeyup = function(event) {
 
   guessedLetters.push(userGuess);
   updateGuessesLeft();
-  updateGuessesSoFar();
+  updateWrongGuesses();
 
 //Wins and Loss Conditions
         // Win Condition, Adds 1 to Wins Tracker
